@@ -5,11 +5,12 @@ import com.example.demo.decorator.CondimentDecorator;
 
 /**
  * 豆浆
+ *
  * @author 王明卿
  * @version 1.0
  * @since 2020/4/19 12:40
  **/
-public class Soy extends CondimentDecorator{
+public class Soy extends CondimentDecorator {
 
     Beverage beverage;
 

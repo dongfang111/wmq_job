@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
  * @since 2019/4/16 15:23
  **/
 @Component
-public class JdkProxySubject implements InvocationHandler{
+public class JdkProxySubject implements InvocationHandler {
 
     private RealSubject realSubject;
 

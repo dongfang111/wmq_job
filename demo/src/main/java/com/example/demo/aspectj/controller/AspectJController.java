@@ -23,16 +23,16 @@ public class AspectJController {
 
     @RequestMapping("/sayHello")
     @ResponseBody
-    public Map<String,Object> aHelloService(){
+    public Map<String, Object> aHelloService() {
         String s = null;
-        Map<String,Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         try {
             s = aService.sayHelloA();
-            throw new BusinessException("00","hi 出现异常！");
+            throw new BusinessException("00", "hi 出现异常！");
             //System.out.println("33333");
         } catch (BusinessException e) {
-            map.put("code",e.getErrCode());
-            map.put("msg",e.getErrMsg());
+            map.put("code", e.getErrCode());
+            map.put("msg", e.getErrMsg());
         }
         return map;
     }

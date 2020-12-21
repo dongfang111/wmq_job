@@ -8,7 +8,7 @@ import java.util.Observer;
  * @version 1.0
  * @since 2020/4/5 22:09
  **/
-public class ForecastDisplay implements Observer{
+public class ForecastDisplay implements Observer {
 
     Observable observable;
     private float currentPressure = 29.92f;

@@ -4,7 +4,7 @@ import javax.xml.transform.Source;
 
 /**
  * 归并排序
- *  采用分而治之，先分开排序，然后再归并
+ * 采用分而治之，先分开排序，然后再归并
  *
  * @author 王明卿
  * @version 1.0

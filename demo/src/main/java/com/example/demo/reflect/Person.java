@@ -49,7 +49,7 @@ public class Person {
         this.sex = sex;
     }
 
-    public static void s(){
+    public static void s() {
         System.out.println("person static");
     }
 }

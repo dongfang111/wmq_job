@@ -7,5 +7,6 @@ import org.springframework.stereotype.Component;
  */
 public interface Subject {
     void request();
+
     void hello();
 }

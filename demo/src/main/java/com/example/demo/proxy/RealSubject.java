@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @since 2019/4/16 15:20
  **/
 @Component
-public class RealSubject implements Subject{
+public class RealSubject implements Subject {
 
     public void request() {
         System.out.println("RealSubject request sout");

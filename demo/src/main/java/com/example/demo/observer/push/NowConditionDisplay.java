@@ -2,6 +2,7 @@ package com.example.demo.observer.push;
 
 /**
  * 显示当前天气的仪器-观察者的具体类
+ *
  * @author 王明卿
  * @version 1.0
  * @since 2020/4/5 21:17

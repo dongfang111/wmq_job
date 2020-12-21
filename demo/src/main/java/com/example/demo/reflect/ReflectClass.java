@@ -46,14 +46,14 @@ public class ReflectClass {
         System.out.println(constructor1);
 
         System.out.println("--------------获取私有&有参的构造方法---------------");
-        Constructor<Person> constructor2 = Person.class.getDeclaredConstructor(new Class[]{String.class,int.class});
+        Constructor<Person> constructor2 = Person.class.getDeclaredConstructor(new Class[]{String.class, int.class});
         System.out.println(constructor2);
 
         //获取属性字段
         Field name = Person.class.getDeclaredField("name");
         Person person = Person.class.getConstructor().newInstance();
         name.setAccessible(true);
-        name.set(person,"小明");
+        name.set(person, "小明");
         System.out.println(person.getName());
 
         //获取方法method
@@ -69,10 +69,10 @@ public class ReflectClass {
 
         Object o = teacher.getConstructor().newInstance();
         Method teacherMethod = teacher.getDeclaredMethod("s", String.class);
-        teacherMethod.invoke(o,"  teacher");
+        teacherMethod.invoke(o, "  teacher");
 
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.DAY_OF_MONTH,0);
-        Date time =   calendar.getTime();
+        calendar.set(Calendar.DAY_OF_MONTH, 0);
+        Date time = calendar.getTime();
     }
 }

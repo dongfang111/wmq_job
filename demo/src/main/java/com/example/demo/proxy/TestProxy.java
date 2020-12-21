@@ -12,7 +12,7 @@ import java.lang.reflect.Proxy;
 public class TestProxy {
 
     public static void main(String[] args) {
-        Subject  subject  = (Subject)Proxy.newProxyInstance(TestProxy.class.getClassLoader(), new Class[]{Subject.class}, new JdkProxySubject(new RealSubject()));
+        Subject subject = (Subject) Proxy.newProxyInstance(TestProxy.class.getClassLoader(), new Class[]{Subject.class}, new JdkProxySubject(new RealSubject()));
         subject.request();
         subject.hello();
     }

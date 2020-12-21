@@ -5,12 +5,13 @@ package com.example.demo.exception;
  * @version 1.0
  * @since 2019/4/30 10:41
  **/
-public class BusinessException extends RuntimeException{
+public class BusinessException extends RuntimeException {
 
     private String errCode;
     private String errMsg;
 
-    public BusinessException(){}
+    public BusinessException() {
+    }
 
     public BusinessException(String errCode, String errMsg) {
         this.errCode = errCode;

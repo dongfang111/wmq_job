@@ -8,7 +8,7 @@ import java.util.Observer;
  * @version 1.0
  * @since 2020/4/5 21:41
  **/
-public class NowConditionDisplay implements Observer{
+public class NowConditionDisplay implements Observer {
 
     Observable observable;
     private float temperature;
@@ -16,6 +16,7 @@ public class NowConditionDisplay implements Observer{
 
     /**
      * 构造器参数是被观察者，然后将观察者注册
+     *
      * @param observable
      */
     public NowConditionDisplay(Observable observable) {

@@ -14,7 +14,7 @@ public class TestCglibProxy {
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(RealSubject.class);
         enhancer.setCallback(new DemoMethodInterceptor());
-        RealSubject realSubject = (RealSubject)enhancer.create();
+        RealSubject realSubject = (RealSubject) enhancer.create();
         realSubject.request();
     }
 }

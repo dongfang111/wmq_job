@@ -17,7 +17,7 @@ public class StarbuzzCoffee {
         System.out.println(beverage.getDescription() + " $" + beverage.cost());
 
         Beverage beverage2 = new HouseBlend();
-        beverage2 =  new Mocha(beverage2); //1.加摩卡
+        beverage2 = new Mocha(beverage2); //1.加摩卡
         beverage2 = new Mocha(beverage2); //2.再加一份摩卡
         beverage2 = new Soy(beverage2); //3.加豆浆
         System.out.println(beverage2.getDescription() + " $" + beverage2.cost());

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HIController {
 
     @RequestMapping("/hi")
-    public String sayHi(){
+    public String sayHi() {
         return "hello";
     }
 }
