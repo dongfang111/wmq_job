@@ -60,7 +60,5 @@ public class ReverseList {
             System.out.println(head.val);
             head = head.next;
         }
-
-
     }
 }

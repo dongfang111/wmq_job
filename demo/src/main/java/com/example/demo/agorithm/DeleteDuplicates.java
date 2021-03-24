@@ -12,7 +12,32 @@ import com.example.demo.agorithm.reverse.ListNode;
  **/
 public class DeleteDuplicates {
 
-    public static void deleteDuplicates(ListNode head) {
+    public static ListNode deleteDuplicates(ListNode head) {
+        ListNode curr = head;
+        while (curr != null && curr.next != null) {
+            if (curr.val == curr.next.val) {
+                curr.next = curr.next.next;
+            } else {
+                curr = curr.next;
+            }
+        }
+        return head;
+    }
 
+    public static void main(String[] args) {
+        ListNode l1 = new ListNode(1);
+        l1.next = new ListNode(1);
+        l1.next.next = new ListNode(1);
+        l1.next.next.next = new ListNode(3);
+        l1.next.next.next.next = new ListNode(3);
+
+        ListNode listNode = deleteDuplicates(l1);
+        ListNode p = listNode;
+//        p.next = null;
+//        listNode.next = null;
+        while (p != null) {
+            System.out.println(p.val);
+            p = p.next;
+        }
     }
 }
