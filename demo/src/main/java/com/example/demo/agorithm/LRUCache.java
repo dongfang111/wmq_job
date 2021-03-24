@@ -62,10 +62,6 @@ public class LRUCache {
     public LRUCache(int capacity) {
         size = 0;
         this.capacity = capacity;
-        head = new LinkedNode();
-        tail = new LinkedNode();
-        head.next = tail;
-        tail.prev = head;
     }
 
     public int get(int key) {
@@ -73,29 +69,52 @@ public class LRUCache {
         if (node == null) {
             return -1;
         }
+        removeNode(node);
         removeToHead(node);
         return node.value;
     }
 
     public void put(int key, int value) {
-
-
+        LinkedNode node = cache.get(key);
+        if (node == null) {
+            //此时需要创建新节点
+            LinkedNode newNode = new LinkedNode(key, value);
+            ++size;
+            if (size > capacity) {
+                //删除尾结点
+                tail.prev.next = null;
+                //删除哈希表中的tail节点
+                cache.remove(tail.key);
+                tail = tail.prev;
+                removeToHead(newNode);
+                --size;
+            }
+        } else {
+            node.value = value;
+            removeToHead(node);
+        }
     }
 
     /**
      * 把节点移到头部
      */
     private void removeToHead(LinkedNode node) {
-        //prev为前一个节点，next为后一个节点
-        LinkedNode prev = node.prev;
-        LinkedNode next = node.next;
-
-        LinkedNode first;
         //如果当前节点为头结点，则不用处理，反之则用处理
-        if ((first= head) != node) {
-
+        if (head != node) {
+            if (node.next == null) {
+                //当前元素是尾结点
+                //node前一个节点的指向下一个节点为空
+                node.prev.next = null;
+                tail = node.prev;
+            } else {
+                //当前节点是中间节点
+                node.next.prev = node.prev;
+                node.prev.next = node.next;
+            }
+            node.prev = null;
+            node.next = head;
+            head = node;
         }
-
     }
 
     /**
@@ -112,5 +131,9 @@ public class LRUCache {
         } else {
             tail = node.prev;
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 }

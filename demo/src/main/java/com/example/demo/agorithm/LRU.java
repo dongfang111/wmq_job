@@ -1,6 +1,7 @@
 package com.example.demo.agorithm;
 
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
 
 /**
@@ -15,7 +16,7 @@ public class LRU<K, V> extends LinkedHashMap<K, V> implements Map<K, V> {
      * 构造器
      * @param initialCapacity 容量
      * @param loadFactor 负载因子
-     * @param accessOrder true代表访问顺序，fasle代表插入顺序
+     * @param accessOrder true代表访问顺序，false代表插入顺序
      */
     public LRU(int initialCapacity, float loadFactor, boolean accessOrder) {
         super(initialCapacity, loadFactor, accessOrder);
