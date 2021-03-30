@@ -24,6 +24,7 @@ public class CycleList {
         ListNode p = head;
         while (p != null) {
             //set不允许放重复元素，如果add不成功，代表是重复元素
+            //p为入环处
             if (!set.add(p)) {
                 return true;
             }
@@ -39,25 +40,71 @@ public class CycleList {
      * @return
      */
     public static boolean hasCycleByFastSlowPointer(ListNode head) {
-
-        ListNode slow = head.next;
-        ListNode fast = head.next.next;
-
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true;
+            }
+        }
         return false;
     }
 
-    public static void main(String[] args) {
-        ListNode l1 = new ListNode(3);
-        ListNode cycleNode = new ListNode(2);
+    /**
+     * 求出环的长度
+     *
+     * @param head
+     * @return
+     */
+    public static int hasCycleByFastSlowPointerLength(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        int i = 0;
+        int length = 0;
+        while (fast != null && fast.next != null) {
+            length++;
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                i++;
+                if (i == 1) {
+                    length = 0;
+                } else if (i == 2) {
+                    //第二次相遇，返回累计步长
+                    return length;
+                }
+            }
+        }
+        return 0;
+    }
 
-        l1.next = cycleNode;
-        cycleNode.next = new ListNode(0);
-        cycleNode.next.next = new ListNode(-4);
-        cycleNode.next.next.next = cycleNode;
+    public static void main(String[] args) {
+        ListNode a = new ListNode(3);
+        ListNode b = new ListNode(2);
+        ListNode c = new ListNode(0);
+        ListNode d = new ListNode(-4);
+
+        a.next = b;
+        b.next = c;
+        c.next = d;
+        d.next = b;
 
         //利用set重复元素排除
-        boolean hasCycle = hasCycle(l1);
+        //这种在入环处中断循环
+        boolean hasCycle = hasCycle(a);
         System.out.println(hasCycle);
+
+        //利用快慢指针
+        //快慢指针相遇的地方中断循环，不一定是入环处
+        boolean hasCycle2 = hasCycleByFastSlowPointer(a);
+        System.out.println(hasCycle2);
+
+        //如何求出环的长度
+        System.out.println(hasCycleByFastSlowPointerLength(a));
+
+        //如果有环，判断入环处 TODO
 
 
     }
