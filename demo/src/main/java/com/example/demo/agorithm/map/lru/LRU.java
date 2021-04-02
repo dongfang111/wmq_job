@@ -1,4 +1,4 @@
-package com.example.demo.agorithm.lru;
+package com.example.demo.agorithm.map.lru;
 
 import java.util.HashMap;
 

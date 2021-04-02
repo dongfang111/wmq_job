@@ -1,4 +1,4 @@
-package com.example.demo.agorithm.lru;
+package com.example.demo.agorithm.map.lru;
 
 public class Node {
     int key;

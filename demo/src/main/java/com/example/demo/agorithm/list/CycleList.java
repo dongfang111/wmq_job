@@ -1,6 +1,6 @@
-package com.example.demo.agorithm;
+package com.example.demo.agorithm.list;
 
-import com.example.demo.agorithm.reverse.ListNode;
+import com.example.demo.agorithm.list.reverse.ListNode;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,7 +1,6 @@
-package com.example.demo.agorithm;
+package com.example.demo.agorithm.list;
 
-import com.example.demo.agorithm.reverse.ListNode;
-import org.springframework.util.StringUtils;
+import com.example.demo.agorithm.list.reverse.ListNode;
 
 /**
  * 移除链表元素

@@ -1,6 +1,6 @@
-package com.example.demo.agorithm;
+package com.example.demo.agorithm.list;
 
-import com.example.demo.agorithm.reverse.ListNode;
+import com.example.demo.agorithm.list.reverse.ListNode;
 
 /**
  * 合并有序链表

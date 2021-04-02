@@ -1,4 +1,4 @@
-package com.example.demo.agorithm.reverse;
+package com.example.demo.agorithm.list.reverse;
 
 /**
  * 链表节点

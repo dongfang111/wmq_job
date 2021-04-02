@@ -1,6 +1,6 @@
-package com.example.demo.agorithm;
+package com.example.demo.agorithm.list;
 
-import com.example.demo.agorithm.reverse.ListNode;
+import com.example.demo.agorithm.list.reverse.ListNode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -82,11 +82,11 @@ public class IntersectionNode {
         l1.next.next.next = new ListNode(5);
         //链表aa
         ListNode aa = new ListNode(4);
-        aa.next = l1;
+//        aa.next = l1;
         //链表bb
         ListNode bb = new ListNode(5);
         bb.next = new ListNode(0);
-        bb.next.next = l1;
+//        bb.next.next = l1;
         //找出相交链表
         ListNode intersectionNode = getIntersectionNode3(aa, bb);
         ListNode p = intersectionNode;

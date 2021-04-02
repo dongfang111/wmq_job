@@ -1,4 +1,4 @@
-package com.example.demo.agorithm;
+package com.example.demo.agorithm.list;
 
 import java.util.ArrayList;
 import java.util.HashMap;
