@@ -3,6 +3,7 @@ package com.example.demo;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * @author wmqing
@@ -17,6 +18,6 @@ public class MainClass {
         Date parse = dateFormat.parse(date);
         System.out.println(parse);
 
-
+        new HashMap<>();
     }
 }
