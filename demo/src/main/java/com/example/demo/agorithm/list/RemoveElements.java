@@ -2,6 +2,7 @@ package com.example.demo.agorithm.list;
 
 import com.example.demo.agorithm.list.reverse.ListNode;
 
+
 /**
  * 移除链表元素
  * 给你一个链表的头节点 head和一个整数 val ，
@@ -37,6 +38,12 @@ public class RemoveElements {
 
     public static void main(String[] args) {
         ListNode l1 = new ListNode(6);
+
+        ClassLoader classLoader = l1.getClass().getClassLoader();
+        System.out.println(classLoader);
+        System.out.println(classLoader.getParent());
+        System.out.println(classLoader.getParent().getParent());
+
         l1.next = new ListNode(2);
         l1.next.next = new ListNode(6);
         l1.next.next.next = new ListNode(3);
