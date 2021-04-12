@@ -15,13 +15,12 @@ public class TestClassLoader extends ClassLoader {
 
     private String name;
 
-    public TestClassLoader(ClassLoader parent, String name) {
-        super(parent);
+    public TestClassLoader(String name) {
         this.name = name;
     }
 
     @Override
-    public Class<?> loadClass(String name){
+    public Class<?> findClass(String name){
         InputStream is = null;
         byte[] data = null;
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -59,6 +58,6 @@ public class TestClassLoader extends ClassLoader {
     }
 
     public static void main(String[] args) {
-
+        TestClassLoader loader = new TestClassLoader("");
     }
 }
