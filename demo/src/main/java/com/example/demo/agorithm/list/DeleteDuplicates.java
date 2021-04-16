@@ -27,13 +27,6 @@ public class DeleteDuplicates {
     }
 
     public static void main(String[] args) {
-//        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor();
-//        threadPoolExecutor.execute(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//            }
-//        });
         try {
             ListNode l1 = new ListNode(1);
             l1.next = new ListNode(1);

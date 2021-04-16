@@ -1,7 +1,8 @@
 package com.example.demo.jvm;
 
+import jdk.internal.util.xml.impl.Input;
+
 import java.io.*;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 沿用双亲委派机制自定义类加载器
@@ -12,16 +13,19 @@ import java.util.concurrent.locks.ReentrantLock;
  **/
 public class TestClassLoader extends ClassLoader {
 
-    public TestClassLoader() {
+    private String name;
+
+    public TestClassLoader(String name) {
+        this.name = name;
     }
 
     @Override
-    public Class<?> findClass(String name) {
+    public Class<?> findClass(String name){
         InputStream is = null;
         byte[] data = null;
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
-            is = new FileInputStream(new File(name));
+            is = new FileInputStream(new File("d:/Test.class"));
             int c = 0;
             while (-1 != (c = is.read())) {
                 baos.write(c);
@@ -48,9 +52,12 @@ public class TestClassLoader extends ClassLoader {
         return this.defineClass(name, data, 0, data.length);
     }
 
-    public static void main(String[] args) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
-        TestClassLoader test = new TestClassLoader();
-        Class<?> aClass = test.loadClass("D:\\Test.class");
-        Object o = aClass.newInstance();
+    @Override
+    public String toString() {
+        return this.name;
+    }
+
+    public static void main(String[] args) {
+        TestClassLoader loader = new TestClassLoader("");
     }
 }
